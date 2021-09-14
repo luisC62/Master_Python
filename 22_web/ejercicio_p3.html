@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio p1</title>
+</head>
+<body>
+    <h1>The most wanted</h1>
+    <h3>Site menu</h3>
+    <ul>
+        <li><a href="ejercicio_p1.html"> Welcome page </a></li>
+        <li><a href="ejercicio_p2.html"> Main Suspects </a></li>
+        <li><a href="ejercicio_p3.html"> Have you seen? </a></li>
+    </ul>
+    </hr>
+    <h2>Have you seen any of <a href="ejercicio_p2.html"> these </a>guys?</h2>
+    <form action="" method="POST">
+        <p>
+            <label for="nombre">Who are you?</label>
+            <input type="text" name="nombre" placeholder="Your complete name"/>
+        </p>
+        <p>
+            <label for="email">Your contat email</label>
+            <input type="text" name="email" placeholder="Your complete email"/>
+        </p>
+        <p>
+            <label for="sospechoso">Who have you seen?</label>
+            <select name="sospechoso">
+                <option value = "Giusseppe">Giusseppe Corleone</option>
+                <option value = "Jack">Jack the Ripper</option>
+                <option value = "Harry">Dirty Harry</option>
+                <option value = "Billy">Billy the Kid</option>
+            </select>
+        </p>
+        <p>
+            <label for="descripcion">Where and When</label>
+            <textarea name="descripcion" placeholder="Describe where and when"></textarea>
+        </p>
+        <input type="submit" value="Send Form"/>
+    </form>
+
+</body>
+</html>

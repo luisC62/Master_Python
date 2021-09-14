@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+{% block title%}
+Ejemplo de Página de pruebas
+{% endblock %}
+
+{% block content %}
+<h1 class="title">Página de mi web</h1>
+{% comment %} Prueba de filtros Estandar. (Consultar la documentación de Django) {% endcomment %}
+<p>{{ "Creado por Luis Cárceles &copy 2020" }}</p> {% comment %} Párrafo original {% endcomment %}
+<p>{{ "Creado por Luis Cárceles &copy 2020"|cut:" " }}</p> {% comment %} Párrafo sin espacios {% endcomment %}
+<p>{{ "Creado por Luis Cárceles &copy 2020"|cut:"o" }}</p> {% comment %} Párrafo  sin o's {% endcomment %}
+<p>{{ lista|last }}</p> {% comment %} filtros para listas {% endcomment %}
+<p>{{ lista|first }}</p>
+<p>{{ lista|join:', ' }}</p>
+<p>{{ lista|length }}</p>
+<p>{{ "Un texto"|length }}</p>
+<p>{{ "Un texto"|upper }}</p>
+<p>{{ lista|random }}</p>
+{% load filters %}
+{{ Miguel|saludo|safe }}{% comment %} filtro personalizado {% endcomment %}
+
+{% endblock %}

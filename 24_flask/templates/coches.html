@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Lista de coches
+{% endblock %}
+
+{% block content %}
+
+    <h1>Lista de coches</h1>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <br/>
+                <dev class= "message alert-success">
+                    {{message}}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    
+    {% for coche in coches %}
+        <article class="article-item">
+            
+            <h2>
+                <a href="{{ url_for('coche', coche_id=coche.0)}}">{{coche.1}}</a>
+            </h2>
+            <p>Referencia: {{coche.0}}</p>
+            <p>modelo: {{coche.2}}</p>
+            <p>Precio en €: {{coche.3}}</p>
+            <p>Ciudad: {{coche.4}}</p>
+            <p>
+                <a href="{{ url_for('editar_coche', coche_id=coche.0) }}" class="btn btn-warning">Editar</a>
+                <a href="{{ url_for('borrar_coche', coche_id=coche.0) }}" class="btn btn">Eliminar</a>
+            </p>
+
+                     
+        </article>   
+    {% endfor %}
+
+
+{% endblock %}
+

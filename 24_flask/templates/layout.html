@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %} Flask {% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"/>
+</head>
+<body>
+    <header>
+        <div id="logotipo">
+            <!-- Logo Flask -->
+            <img src="{{ url_for('static', filename='img/flask.png') }}"/>
+            <h1>Sitio web con Flask</h1>
+        </div> 
+    </header>
+    <nav>
+        <ul>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="{{ url_for('crear_coche') }}">Crear coches</a></li>
+            <li><a href="{{ url_for('coches') }}">Lista de coches</a></li>
+            <li><a href="{{ url_for('masinfo') }}">Información</a></li>
+            <li><a href="{{ url_for('contacto') }}">Contacto</a></li>
+            <li><a href="{{ url_for('lenguajes') }}">Lenguajes de programación</a></li>
+            
+        </ul>
+    </nav>
+    <div class="barra">
+        <sapan class="esquina-izquierda"></sapan>
+        <sapan class="relleno-barra"></sapan>
+        <sapan class="esquina-derecha"></sapan>
+    </div>
+    <div id="content">
+        <div class="box">
+            {% block content %}
+            <!-- Código que viene de templates -->
+            <strong>Contenido del bloque original!!!</strong>
+            {% endblock %}
+        </div>
+    </div>
+    <hr/>
+    <footer>
+        Máster en Python; &copy Luis Cárceles {{now.month}}/{{now.year}}
+    </footer>
+</body>
+</html>

@@ -1,0 +1,51 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+            <!-- Se especifica en las templates -->
+        {% endblock %}
+    </title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}" />
+</head>
+<body>
+    <!-- Cabezera de la página -->
+    <header>
+        <div id="logotipo">
+            <!-- Logo Django -->
+            <img src="{% static 'images/logo.png' %}"/>
+            <h1>Sitio web con Django</h1>
+        </div> 
+    </header>
+    <nav>
+        <ul>
+            <li><a href="{% url 'inicio' %}">Inicio</a></li>
+            <li><a href="{% url 'articulos' %}">Artículos</a></li>
+            <li><a href="{% url 'create' %}">Crear artículos</a></li>
+            <li><a href="{% url 'pagina' %}">Página de pruebas</a></li>
+            <li><a href="{% url 'contacto' 'Marta' 'Diaz'%}">Contacto</a></li>
+        </ul>
+    </nav>
+    <div class="barra">
+        <sapan class="esquina-izquierda"></sapan>
+        <sapan class="relleno-barra"></sapan>
+        <sapan class="esquina-derecha"></sapan>
+    </div>
+    <div id="content">
+        <div class="box">
+            {% block content %}
+            <!-- Código que viene de templates -->
+            <strong>Contenido del bloque original!!!</strong>
+            {% endblock %}
+        </div>
+    </div>
+    <hr/>
+    <footer>
+        Máster en Python; &copy Luis Cárceles - {% now "d/m/Y"%}
+    </footer>
+</body>
+</html>

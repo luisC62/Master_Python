@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+{% block title%}
+{{title}}
+{% endblock %}
+
+<!-- Esto es un comentario en HTML -->
+{% comment %} 'Esto es un comentario en Django' {% endcomment %}
+
+{% block content %}
+
+<h1 class="title">{{title}}</h1>
+<p>{{mi_variable}}</p>
+
+{% include 'fecha-actual.html'%}
+
+{% if nombre and nombre == 'Luis Cárceles' %}
+    <p>{{nombre}}</p>
+{% else %}
+    <strong>No hay nombre</strong>
+{% endif %}
+<h3>Lista de lenguajes de programación</h3>
+<ul>
+    {% for lenguaje in lenguajes %}
+        <li>{{forloop.counter}}. {{lenguaje}}</li>
+    {% empty %}
+        <p>No hay lenguajes que mostrar!</p>
+    {% endfor %}
+</ul>
+
+
+{% endblock %}

@@ -1,0 +1,14 @@
+
+<br/>
+<hr/>
+<br/>
+<h1>Bienvenido {{nombre}}.</h1>
+<h1>Estamos en el año {{year}}.</h1>
+<p>Años pares hasta el 2050:</p>
+<ul>
+    {% for y in rango%}
+        {% if y|divisibleby:2 == True %}
+            <li>{{y}}</li>
+        {% endif %}
+    {% endfor %}
+</ul>

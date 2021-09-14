@@ -1,0 +1,27 @@
+Página principal
+    Encabezado
+        Menú (Lista)
+            Enlaces a otras páginas
+    Subtítulo:
+        Imagen (foto)
+        Párrafo
+
+Seguna Página
+    Encabezado (el mismo que la página principal)
+        Menú (el mismo en todas)
+    Subtítulo   
+        Tabla
+            Primera fila
+                Textos
+            Segunda fila
+                Imagenes
+
+Tercera página
+    Encabezado (el mismo que las páginas anteriores)
+        Menú (el mismo en todas)
+    Subtítulo (Contacto)
+        Furmulario
+            Nombre
+            Descripción
+            Selección
+            Botón de enviar
